@@ -1,7 +1,9 @@
 {
-  "/page": "app/page.js",
+  "/_not-found/page": "app/_not-found/page.js",
   "/(Auth)/reset-password/page": "app/(Auth)/reset-password/page.js",
   "/(Auth)/new-password/page": "app/(Auth)/new-password/page.js",
   "/(Auth)/register/page": "app/(Auth)/register/page.js",
+  "/(Auth)/verify-email/page": "app/(Auth)/verify-email/page.js",
+  "/page": "app/page.js",
   "/dashboard/page": "app/dashboard/page.js"
 }

@@ -11,6 +11,16 @@ Este projeto é um **Dashboard Financeiro** desenvolvido para auxiliar usuários
 - **Persistência de Sessão e Filtros**: Mantém a sessão do usuário e os filtros aplicados mesmo após recarregar a página.
 - **Design Responsivo**: Interface adaptada para diversos dispositivos e tamanhos de tela.
 
+---
+
+## 🔗 Link do Projeto
+
+Acesse o projeto ao vivo clicando no link abaixo:
+
+[**Dashboard Financeiro - Bix Tecnologia**](bix-tecnologia.vercel.app)
+
+---
+
 ## 🖼️ Visualizações
 
 ### Tela de Login

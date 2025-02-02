@@ -22,6 +22,8 @@ export const AuthBox = styled(Box)`
 `;
 
 export const StyledInput = styled(Input)`
+  background-color: #fff;
+  color: #000;
   margin-bottom: 1rem;
   border-radius: 5px;
   border: 1px solid #ccc;
