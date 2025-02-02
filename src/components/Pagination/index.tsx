@@ -1,6 +1,10 @@
 "use client";
-
-import { HStack, Button, Text } from "@chakra-ui/react";
+import { AiOutlineLeft, AiOutlineRight } from "react-icons/ai";
+import {
+  PaginationContainer,
+  PaginationText,
+  PaginationButton,
+} from "./styled";
 
 interface PaginationProps {
   count: number;
@@ -18,19 +22,19 @@ export function PaginationRoot({
   const totalPages = Math.ceil(count / pageSize);
 
   return (
-    <HStack wrap="wrap" justify="center" mt={4}>
+    <PaginationContainer>
       <PaginationPrevTrigger
         onClick={() => onPageChange(Math.max(1, page - 1))}
         disabled={page === 1}
       />
-      <Text>
+      <PaginationText>
         Página {page} de {totalPages}
-      </Text>
+      </PaginationText>
       <PaginationNextTrigger
         onClick={() => onPageChange(Math.min(totalPages, page + 1))}
         disabled={page === totalPages}
       />
-    </HStack>
+    </PaginationContainer>
   );
 }
 
@@ -42,9 +46,9 @@ export function PaginationPrevTrigger({
   disabled?: boolean;
 }) {
   return (
-    <Button onClick={onClick} disabled={disabled}>
-      Anterior
-    </Button>
+    <PaginationButton onClick={onClick} disabled={disabled}>
+      <AiOutlineLeft />
+    </PaginationButton>
   );
 }
 
@@ -56,8 +60,8 @@ export function PaginationNextTrigger({
   disabled?: boolean;
 }) {
   return (
-    <Button onClick={onClick} disabled={disabled}>
-      Próximo
-    </Button>
+    <PaginationButton onClick={onClick} disabled={disabled}>
+      <AiOutlineRight />
+    </PaginationButton>
   );
 }

@@ -1,8 +1,10 @@
 "use client";
 
-import { Stack, Flex, Input, Button } from "@chakra-ui/react";
+import { Stack, Flex } from "@chakra-ui/react";
 import { useEffect, useState } from "react";
 import SelectCustom from "../Select";
+import { StyledButton } from "../Button/styled";
+import { StyledInput } from "../Input/styled";
 
 interface FilterProps {
   filters: {
@@ -97,23 +99,17 @@ export default function FilterSection({ filters, setFilters }: FilterProps) {
   return (
     <Stack mb={6} justifyContent="center">
       <Flex direction={{ base: "column", md: "row" }} gap={4} width="100%">
-        <Input
+        <StyledInput
           type="date"
           placeholder="Data Inicial"
           value={tempFilters.startDate}
           onChange={(e) => handleInputChange("startDate", e.target.value)}
-          height="48px"
-          border="1px solid #dcdcdc"
-          borderRadius="8px"
         />
-        <Input
+        <StyledInput
           type="date"
           placeholder="Data Final"
           value={tempFilters.endDate}
           onChange={(e) => handleInputChange("endDate", e.target.value)}
-          height="48px"
-          border="1px solid #dcdcdc"
-          borderRadius="8px"
         />
         <SelectCustom
           placeholder="Estado"
@@ -125,21 +121,18 @@ export default function FilterSection({ filters, setFilters }: FilterProps) {
       </Flex>
 
       <Flex direction={{ base: "column", md: "row" }} gap={4} width="100%">
-        <Input
+        <StyledInput
+          type="text"
           placeholder="Indústria"
           value={tempFilters.industry}
           onChange={(e) => handleInputChange("industry", e.target.value)}
-          height="48px"
-          border="1px solid #dcdcdc"
-          borderRadius="8px"
         />
-        <Input
+
+        <StyledInput
+          type="text"
           placeholder="Conta"
           value={tempFilters.account}
           onChange={(e) => handleInputChange("account", e.target.value)}
-          height="48px"
-          border="1px solid #dcdcdc"
-          borderRadius="8px"
         />
 
         <SelectCustom
@@ -157,22 +150,8 @@ export default function FilterSection({ filters, setFilters }: FilterProps) {
         gap={3}
         justifyContent="flex-end"
         mb={8}>
-        <Button
-          height="48px"
-          px={6}
-          borderRadius="8px"
-          fontWeight="bold"
-          onClick={applyFilters}>
-          Aplicar Filtros
-        </Button>
-        <Button
-          height="48px"
-          px={6}
-          borderRadius="8px"
-          fontWeight="bold"
-          onClick={clearFilters}>
-          Limpar Filtros
-        </Button>
+        <StyledButton onClick={applyFilters}>Aplicar Filtros</StyledButton>
+        <StyledButton onClick={clearFilters}>Limpar Filtros</StyledButton>
       </Flex>
     </Stack>
   );

@@ -11,7 +11,7 @@ export default function SelectCustom(props: SelectCustomProps) {
     const removeIconWrapper = () => {
       if (!selectRef.current) return;
 
-      const parent = selectRef.current.closest(".chakra-select__wrapper"); // Obtém o elemento pai correto
+      const parent = selectRef.current.closest(".chakra-select__wrapper");
       if (!parent) return;
 
       const iconWrapper = parent.querySelector(
