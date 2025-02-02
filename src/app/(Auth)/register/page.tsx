@@ -1,6 +1,6 @@
 "use client";
 import Register from "@/view/Auth/register";
 
-export default function Home() {
+export default function RegisterPage() {
   return <Register />;
 }

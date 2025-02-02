@@ -1,6 +1,6 @@
 "use client";
 import NewPassword from "@/view/Auth/NewPassword";
 
-export default function Home() {
+export default function NewPasswordPage() {
   return <NewPassword />;
 }

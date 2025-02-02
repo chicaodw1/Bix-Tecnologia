@@ -2,6 +2,6 @@
 
 import ResetPassword from "@/view/Auth/ResetPassword";
 
-export default function Home() {
+export default function ResetPasswordPage() {
   return <ResetPassword />;
 }

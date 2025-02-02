@@ -2,6 +2,7 @@
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import { isAuthenticated } from "@/services/LoginService";
+import "@/styles/global.css";
 
 export default function DashboardLayout({
   children,
