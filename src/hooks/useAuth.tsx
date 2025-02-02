@@ -4,12 +4,14 @@ import { useRouter } from "next/navigation";
 import { isAuthenticated, logoutService } from "@/services/LoginService";
 
 export function useAuth() {
-  const [isUserAuthenticated, setIsUserAuthenticated] = useState(false);
   const router = useRouter();
+  const [isUserAuthenticated, setIsUserAuthenticated] = useState(
+    isAuthenticated()
+  );
 
   useEffect(() => {
     if (!isAuthenticated()) {
-      router.push("/");
+      router.replace("/");
     } else {
       setIsUserAuthenticated(true);
     }
@@ -17,7 +19,7 @@ export function useAuth() {
 
   const handleLogout = () => {
     logoutService();
-    router.push("/");
+    router.replace("/");
   };
 
   return { isUserAuthenticated, handleLogout };

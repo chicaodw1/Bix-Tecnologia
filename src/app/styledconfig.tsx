@@ -7,7 +7,6 @@ export default function StyledComponentsRegistry({
 }: {
   children: React.ReactNode;
 }) {
-  // x-ref: https://reactjs.org/docs/hooks-reference.html#lazy-initial-state
   const [styledComponentsStyleSheet] = useState(() => new ServerStyleSheet());
   useServerInsertedHTML(() => {
     const styles = styledComponentsStyleSheet.getStyleElement();

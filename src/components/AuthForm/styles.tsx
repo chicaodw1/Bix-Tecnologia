@@ -9,7 +9,7 @@ export const Container = styled(Box)`
   position: relative;
   overflow: hidden;
   background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.5)),
-    url("/financeiro.jpg") no-repeat center center/cover;
+    url("/financeiro.webp") no-repeat center center/cover;
 `;
 
 export const AuthBox = styled(Box)`
@@ -28,6 +28,7 @@ export const StyledInput = styled(Input)`
   border-radius: 5px;
   border: 1px solid #ccc;
   padding: 0.8rem;
+
   &:focus {
     border-color: #4b6cb7;
     box-shadow: 0 0 5px rgba(75, 108, 183, 0.5);
@@ -51,7 +52,6 @@ export const StyledButton = styled(Button)`
   font-weight: bold;
   cursor: pointer;
   transition: all 0.3s ease-in-out;
-  background-image: none;
 
   &:hover {
     background: #3a5aa6;

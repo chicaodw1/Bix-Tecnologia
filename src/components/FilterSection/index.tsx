@@ -1,8 +1,8 @@
 "use client";
 
 import { Stack, Flex, Input, Button } from "@chakra-ui/react";
-import { Select } from "@chakra-ui/select";
 import { useEffect, useState } from "react";
+import SelectCustom from "../Select";
 
 interface FilterProps {
   filters: {
@@ -95,8 +95,8 @@ export default function FilterSection({ filters, setFilters }: FilterProps) {
   if (!isClient) return null;
 
   return (
-    <Stack mb={6}>
-      <Flex direction={{ base: "column", md: "row" }} gap={4}>
+    <Stack mb={6} justifyContent="center">
+      <Flex direction={{ base: "column", md: "row" }} gap={4} width="100%">
         <Input
           type="date"
           placeholder="Data Inicial"
@@ -115,6 +115,16 @@ export default function FilterSection({ filters, setFilters }: FilterProps) {
           border="1px solid #dcdcdc"
           borderRadius="8px"
         />
+        <SelectCustom
+          placeholder="Estado"
+          value={tempFilters.state}
+          onChange={(e) => handleInputChange("state", e.target.value)}>
+          <option value="TX">Texas (TX)</option>
+          <option value="MN">Minnesota (MN)</option>
+        </SelectCustom>
+      </Flex>
+
+      <Flex direction={{ base: "column", md: "row" }} gap={4} width="100%">
         <Input
           placeholder="Indústria"
           value={tempFilters.industry}
@@ -123,9 +133,6 @@ export default function FilterSection({ filters, setFilters }: FilterProps) {
           border="1px solid #dcdcdc"
           borderRadius="8px"
         />
-      </Flex>
-
-      <Flex direction={{ base: "column", md: "row" }} gap={4}>
         <Input
           placeholder="Conta"
           value={tempFilters.account}
@@ -134,46 +141,22 @@ export default function FilterSection({ filters, setFilters }: FilterProps) {
           border="1px solid #dcdcdc"
           borderRadius="8px"
         />
-        <Select
-          placeholder="Estado"
-          value={tempFilters.state}
-          onChange={(e) => handleInputChange("state", e.target.value)}
-          height="48px"
-          border="1px solid #dcdcdc"
-          borderRadius="8px"
-          sx={{
-            "select::-ms-expand": { display: "none" },
-            appearance: "none",
-          }}>
-          <option value="TX">Texas (TX)</option>
-          <option value="MN">Minnesota (MN)</option>
-        </Select>
-        <Select
+
+        <SelectCustom
           placeholder="Tipo de Transação"
           value={tempFilters.transactionType}
           onChange={(e) => handleInputChange("transactionType", e.target.value)}
-          height="48px"
-          border="1px solid #dcdcdc"
-          borderRadius="8px"
-          sx={{
-            "& .chakra-select__wrapper": {
-              position: "unset",
-            },
-            appearance: "none",
-            WebkitAppearance: "none",
-            MozAppearance: "none",
-            background: "none",
-            paddingRight: "10px",
-            "::ms-expand": { display: "none" },
-            "::-webkit-inner-spin-button, ::-webkit-calendar-picker-indicator":
-              {
-                display: "none",
-              },
-            position: "relative",
-          }}>
+          icon={undefined}>
           <option value="deposit">Receita (Depósito)</option>
           <option value="withdraw">Despesa (Retirada)</option>
-        </Select>
+        </SelectCustom>
+      </Flex>
+
+      <Flex
+        direction={{ base: "column", md: "row" }}
+        gap={3}
+        justifyContent="flex-end"
+        mb={8}>
         <Button
           height="48px"
           px={6}
@@ -191,12 +174,6 @@ export default function FilterSection({ filters, setFilters }: FilterProps) {
           Limpar Filtros
         </Button>
       </Flex>
-
-      <Flex
-        direction={{ base: "column", md: "row" }}
-        gap={4}
-        justifyContent="flex-end"
-        mb={10}></Flex>
     </Stack>
   );
 }
