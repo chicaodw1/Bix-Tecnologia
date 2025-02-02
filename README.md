@@ -11,6 +11,16 @@ Este projeto é um **Dashboard Financeiro** desenvolvido para auxiliar usuários
 - **Persistência de Sessão e Filtros**: Mantém a sessão do usuário e os filtros aplicados mesmo após recarregar a página.
 - **Design Responsivo**: Interface adaptada para diversos dispositivos e tamanhos de tela.
 
+## 🖼️ Visualizações
+
+### Tela de Login
+
+![Tela de Login](public/screens/login01.png)
+
+### Dashboard
+
+![Dashboard](public/screens/dashboard.png)
+
 ## 🛠️ Tecnologias Utilizadas
 
 - **Next.js**: Framework React para desenvolvimento de aplicações web.
