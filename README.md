@@ -19,17 +19,23 @@ Acesse o projeto ao vivo clicando no link abaixo:
 
 [**Dashboard Financeiro - Bix Tecnologia**](bix-tecnologia.vercel.app)
 
+## 📝 Como Acessar
+
+Para acessar o sistema, **basta se cadastrar** na tela de login em criar conta, além do cadastro você precisa confirmar o e-mail e logo depois logar, também é possivel redefiniar a senha.  
+Após o cadastro, você poderá acessar todas as funcionalidades disponíveis.
+
 ---
 
 ## 🖼️ Visualizações
 
 ### Tela de Login
 
-![Tela de Login](public/screens/login01.png)
+![Tela de Login](public/screens/login.png)
 
 ### Dashboard
 
-![Dashboard](public/screens/dashboard.png)
+![Dashboard](public/screens/dash1.png)
+![Dashboard](public/screens/dash2.png)
 
 ## 🛠️ Tecnologias Utilizadas
 
@@ -115,4 +121,4 @@ dashboard-financeiro/
 - `src/models/`: Definições de tipos e interfaces para dados.
 - `src/services/`: Serviços para comunicação com APIs e lógica de negócios.
 - `src/view/`: Componentes de visualização e containers da aplicação.
-  _
+  \_
