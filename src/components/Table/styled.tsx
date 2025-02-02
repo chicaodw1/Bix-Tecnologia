@@ -75,6 +75,15 @@ export const StyledTableRow = styled(TableRow)`
   }
 `;
 
+export const StyledTableRowBody = styled(TableRow)`
+  &:nth-child(odd) {
+    background-color: #ffffff;
+  }
+  &:nth-child(even) {
+    background-color: #eef2ff;
+  }
+`;
+
 export const StyledTableColumnHeader = styled(TableColumnHeader)`
   padding: 12px;
   text-transform: uppercase;

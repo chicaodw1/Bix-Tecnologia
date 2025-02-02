@@ -10,6 +10,7 @@ import {
   StyledTableHeader,
   StyledTableRoot,
   StyledTableRow,
+  StyledTableRowBody,
   StyledTableScrollArea,
 } from "../Table/styled";
 
@@ -41,7 +42,7 @@ export default function TransactionList({
     <Stack width="full" gap="5">
       <StyledHeading>Transações</StyledHeading>
       <StyledTableScrollArea>
-        <StyledTableRoot size="sm" variant="outline" overflowX="auto" striped>
+        <StyledTableRoot size="sm" variant="outline" overflowX="auto">
           <StyledTableHeader>
             <StyledTableRow>
               <StyledTableColumnHeader>Data</StyledTableColumnHeader>
@@ -56,7 +57,7 @@ export default function TransactionList({
           </StyledTableHeader>
           <StyledTableBody>
             {paginatedTransactions.map((t, index) => (
-              <StyledTableRow key={`${t.date}-${index}`}>
+              <StyledTableRowBody key={`${t.date}-${index}`}>
                 <StyledTableCell>{t.date}</StyledTableCell>
                 <StyledTableCell>{t.account}</StyledTableCell>
                 <StyledTableCell>{t.industry}</StyledTableCell>
@@ -72,7 +73,7 @@ export default function TransactionList({
                   }>
                   R$ {Number(t.amount).toFixed(2)}
                 </StyledTableCell>
-              </StyledTableRow>
+              </StyledTableRowBody>
             ))}
           </StyledTableBody>
         </StyledTableRoot>
