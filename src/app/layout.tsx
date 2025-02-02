@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import Provider from "./provider";
 import StyledComponentsRegistry from "./styeldRegistry";
 import AmplifyProvider from "@/components/AmplifyProvider.tsx";
+import GlobalStyle from "@/styles/GlobalStyle";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -28,9 +29,10 @@ export default function RootLayout({
     <html lang="pt-BR">
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
         <AmplifyProvider />
-        <Provider>
-          <StyledComponentsRegistry>{children}</StyledComponentsRegistry>
-        </Provider>
+        <StyledComponentsRegistry>
+          <GlobalStyle />
+          <Provider>{children}</Provider>
+        </StyledComponentsRegistry>
       </body>
     </html>
   );
