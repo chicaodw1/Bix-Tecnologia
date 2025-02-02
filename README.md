@@ -115,3 +115,4 @@ dashboard-financeiro/
 - `src/models/`: Definições de tipos e interfaces para dados.
 - `src/services/`: Serviços para comunicação com APIs e lógica de negócios.
 - `src/view/`: Componentes de visualização e containers da aplicação.
+  _
