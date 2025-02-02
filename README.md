@@ -1,36 +1,97 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 📊 Dashboard Financeiro
 
-## Getting Started
+Este projeto é um **Dashboard Financeiro** desenvolvido para auxiliar usuários na análise de saldos, receitas, despesas, transações pendentes e histórico de transações. A aplicação é construída utilizando **Next.js**, **TypeScript**, **Chakra UI** e **Styled Components**, garantindo uma interface moderna, responsiva e de fácil navegação.
 
-First, run the development server:
+## 🚀 Funcionalidades
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+- **Autenticação de Usuário**: Sistema de login e logout para proteger o acesso à dashboard.
+- **Filtros Dinâmicos**: Permite filtrar transações por data, conta, indústria e estado, atualizando o conteúdo em tempo real.
+- **Resumo Financeiro**: Exibe cards com informações sobre receitas, despesas, transações pendentes e saldo total.
+- **Gráficos Interativos**: Inclui gráficos de barras empilhadas e de linhas para visualização das transações.
+- **Persistência de Sessão e Filtros**: Mantém a sessão do usuário e os filtros aplicados mesmo após recarregar a página.
+- **Design Responsivo**: Interface adaptada para diversos dispositivos e tamanhos de tela.
+
+## 🛠️ Tecnologias Utilizadas
+
+- **Next.js**: Framework React para desenvolvimento de aplicações web.
+- **TypeScript**: Superset do JavaScript que adiciona tipagem estática ao código.
+- **Styled Components**: Biblioteca para estilização de componentes utilizando CSS-in-JS.
+- **Chart.js**: Biblioteca para criação de gráficos interativos.
+- **react-charts-2.js**: Biblioteca para criação de gráficos interativos.
+- **AWS Amplify (Cognito)**: Plataforma da AWS utilizada para autenticação e gerenciamento de usuários.
+- **Chakra UI**: Biblioteca de componentes para UI.
+
+## 📦 Instalação e Configuração
+
+1. Clone o repositório:
+
+- HTTPS
+  ```bash
+  git clone https://github.com/chicaodw1/Bix-Tecnologia.git
+  cd Bix-Tecnologia
+  ```
+- SSH
+  ```bash
+  git clone git@github.com:chicaodw1/Bix-Tecnologia.git
+  cd Bix-Tecnologia
+  ```
+
+2. Instale as dependências:
+
+   ```bash
+   npm install
+   ```
+
+3. Configure as variáveis de ambiente:
+   - É necessario criar uma conta na aws caso não tenha, para usar o cognito (serviço de autenticação)
+   - Crie um arquivo `.env.local` na raiz do projeto com as seguintes variáveis:
+   ```env
+   NEXT_PUBLIC_AMPLIFY_REGION=your-region
+   NEXT_PUBLIC_AMPLIFY_USER_POOL_ID=your-user-pool-id
+   NEXT_PUBLIC_AMPLIFY_APP_CLIENT_ID=your-app-client-id
+   ```
+4. Execute a aplicação:
+   ```bash
+   npm run dev
+   ```
+5. Acesse no navegador:
+   - Abra `http://localhost:3000`.
+
+## 📂 Estrutura do Projeto
+
+```plaintext
+dashboard-financeiro/
+├── public/
+│   ├── financeiro.jpg
+│   ├── logo.jpg
+│   ├── transactions.json
+├── src/
+│   ├── app/
+│   │   ├── (Auth)/
+│   │   ├── dashboard/
+│   │   ├── layout.tsx
+│   │   ├── page.tsx
+│   │   ├── provider.tsx
+│   │   ├── styledRegistry.tsx
+│   │   ├── styledconfig.tsx
+│   ├── components/
+│   ├── controllers/
+│   ├── hooks/
+│   ├── models/
+│   ├── services/
+│   ├── view/
+├── .env.local
+├── .gitignore
+├── package.json
+├── README.md
+├── tsconfig.json
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- `public/`: Arquivos estáticos e imagens da aplicação.
+- `src/app/`: Estrutura principal do Next.js, incluindo páginas e provedores de contexto.
+- `src/components/`: Componentes reutilizáveis da aplicação.
+- `src/controllers/`: Camada de lógica de controle da aplicação.
+- `src/hooks/`: Hooks personalizados para gerenciamento de estado e lógica compartilhada.
+- `src/models/`: Definições de tipos e interfaces para dados.
+- `src/services/`: Serviços para comunicação com APIs e lógica de negócios.
+- `src/view/`: Componentes de visualização e containers da aplicação.

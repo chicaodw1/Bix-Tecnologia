@@ -1,5 +1,8 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import Provider from "./provider";
+import StyledComponentsRegistry from "./styeldRegistry";
+import AmplifyProvider from "@/components/AmplifyProvider.tsx";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -12,7 +15,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Bix-Tecnologia",
+  title: "Bix-tecnologia",
   description: "Gestão Financeira",
 };
 
@@ -24,7 +27,10 @@ export default function RootLayout({
   return (
     <html lang="pt-BR">
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
-        {children}
+        <AmplifyProvider />
+        <Provider>
+          <StyledComponentsRegistry>{children}</StyledComponentsRegistry>
+        </Provider>
       </body>
     </html>
   );
